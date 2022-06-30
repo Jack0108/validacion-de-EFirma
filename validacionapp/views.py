@@ -7,10 +7,11 @@ from django.core import  files
 def validar(request):
     
     if request.files["val1", "val2"]:
-        validar1=request.files["val1"]
-        validar2=request.files["val2"]
+        validar1=request.GET["val1"]
+        validar2=request.GET["val2"]
         mensaje="Certificados correctos"
     else:
         mensaje= "certificados incorrectos"
     
-    return render (request, "validacion.html" )
+    return render (request, "validacion.html", )
+    
