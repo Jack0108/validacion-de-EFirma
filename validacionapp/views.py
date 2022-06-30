@@ -1,6 +1,16 @@
-from django.shortcuts import render
+import fileinput
+from django.shortcuts import render,request
 from  django.http import HttpResponse
+from django.core import  files
 # Create your views here.
 
 def validar(request):
-    return render (request, "validacion.html", )
+    
+    if request.files["val1", "val2"]:
+        validar1=request.files["val1"]
+        validar2=request.files["val2"]
+        mensaje="Certificados correctos"
+    else:
+        mensaje= "certificados incorrectos"
+    
+    return render (request, "validacion.html" mensaje)
