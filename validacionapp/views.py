@@ -13,4 +13,4 @@ def validar(request):
     else:
         mensaje= "certificados incorrectos"
     
-    return render (request, "validacion.html" mensaje)
+    return render (request, "validacion.html" )
