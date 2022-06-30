@@ -1,17 +1,21 @@
-import fileinput
-from django.shortcuts import render,request
-from  django.http import HttpResponse
-from django.core import  files
+from crypt import methods
+from fileinput import filename
+from tabnanny import filename_only
+from django import apps
+from django.shortcuts import render, redirect
+from django.core.files import  FileSystemStorage
+
 # Create your views here.
 
 def validar(request):
-    
-    if request.files["val1", "val2"]:
-        validar1=request.GET["val1"]
-        validar2=request.GET["val2"]
-        mensaje="Certificados correctos"
-    else:
-        mensaje= "certificados incorrectos"
-    
-    return render (request, "validacion.html", )
-    
+    if request.method=='POST' and request.FILES['uploads']:
+        uploads = request.FILES['uploads']
+        fs=FileSystemStorage()
+        filename= fs.save(uploads.name, uploads)
+        uploaded_file_url=fs.url(filename)
+        return render (request, 'validacion.html', {
+            'uploaded_file_url': uploaded_file_url})
+        
+        
+        
+    return render (request, "validacion.html" )
