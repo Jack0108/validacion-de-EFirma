@@ -3,4 +3,4 @@ from  django.http import HttpResponse
 # Create your views here.
 
 def validar(request):
-    return render (request, "validacion.html")
+    return render (request, "validacion.html", )
