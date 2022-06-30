@@ -1,4 +1,13 @@
-.enter {
-    margin: 0 auto;
-    display: inline-block;
+h1 {
+  font-size: 36px;
+  color: #0320;
+  font-family: 'Open Sans';
   }
+
+  p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    color: #ccc;
+    line-height: 18px;
+    margin-bottom: 20px;
+    }
